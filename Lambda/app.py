@@ -12,9 +12,12 @@ def lambda_handler(event, context):
     # Update item in table or add if doesn't exist
     ddbResponse = table.update_item(
         Key={
-            'id': {'VisitorCount':"0"}
+            'id': 'VisitorCount'
                     },
-        UpdateExpression= "SET generalle = generalle + 1",
+        UpdateExpression= "SET generalle = :value",
+        ExpressionAttributeValues={
+            ':value': 'generalle + 1'
+        },
         ReturnValues="UPDATED_NEW"
     )
 
