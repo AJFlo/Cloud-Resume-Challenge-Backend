@@ -1,0 +1,33 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  My SAM App 03
+
+Resources:
+  
+  MyTable:
+    Type: AWS::Serverless::SimpleTable
+    
+  StartWithSamFunction02:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: Lambda/
+      Handler: app.handler
+      Runtime: python3.8
+      Events:
+        VisitorCount:
+          Type: Api
+          Properties:
+            Path: /Visitor_Count
+            Method: get
+      Environment:
+        Variables: 
+          databaseName : !Ref MyTable
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref MyTable
+
+Outputs:
+  VisitorCountApi:
+    Description: "API Gateway endpoint URL for Prod stage for VisitorCount function"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/Visitor_Count/"
