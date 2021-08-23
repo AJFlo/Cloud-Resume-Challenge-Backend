@@ -11,8 +11,7 @@
     # The type of runner that the job will run on
     name: Test and Deploy
     runs-on: ubuntu-latest
-
-     steps:
+    steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout
         uses: actions/checkout@v2
