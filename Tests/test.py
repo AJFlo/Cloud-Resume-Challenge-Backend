@@ -41,7 +41,4 @@ def invokeLambdaFunction(*, functionName:str=None, payload:typing.Mapping[str, s
     return response
 
 assert invokeLambdaFunction(functionName="StartWithSamFunction02", payload={"ping":123})= int(invokeLambdaFunction(functionName="StartWithSamFunction02", payload={"ping":123}))
-response = lambda_client.invoke(FunctionName="StartWithSamFunction02")
 
-# Verify the response
-assert response == int(response)
