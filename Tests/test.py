@@ -27,7 +27,7 @@ else:
 # Invoke your Lambda function as you normally usually do. The function will run
 # locally if it is configured to do so
 
-def invokeLambdaFunction(*, functionName:str=None, payload:typing.Mapping[str, str]=None):
+def invokeLambdaFunction(functionName:str=None, payload:typing.Mapping[str, str]=None):
     if  functionName == None:
         raise Exception('ERROR: functionName parameter cannot be NULL')
     payloadStr = json.dumps(payload)
@@ -40,5 +40,7 @@ def invokeLambdaFunction(*, functionName:str=None, payload:typing.Mapping[str, s
     )
     return response
 
-assert invokeLambdaFunction(functionName="StartWithSamFunction02", payload={"ping":123})= int(invokeLambdaFunction(functionName="StartWithSamFunction02", payload={"ping":123}))
+response = invokeLambdaFunction(functionName="StartWithSamFunction02", payload={"ping": 1})
+
+assert (response == int(response))
 
