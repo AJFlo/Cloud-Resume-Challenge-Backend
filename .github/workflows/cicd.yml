@@ -1,28 +1,25 @@
  name: CI
 
-# Controls when the workflow will run
- on: [ push ]
-  # Triggers the workflow on push or pull request events but only for the main branch
- workflow_dispatch:
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
- jobs:
-  # This workflow contains a single job called "build"
-  deploy:
-    # The type of runner that the job will run on
-    name: Test and Deploy
+name: Close as a feature
+on: push
+
+jobs:
+  build:
     runs-on: ubuntu-latest
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          'aws-access-key-id': ${{ secrets.AWS_ACCESS_KEY_ID }}
-          'aws-secret-access-key': ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          'aws-region': us-east-2
-          
-      - name: Build & Deploy
-        run: |
-          aws sam build --use-container && sam deploy
+    - name: sam build
+      uses: TractorZoom/sam-cli-action@master
+      with:
+        sam_command: "build"
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+    - name: sam deploy
+      uses: TractorZoom/sam-cli-action@master
+      with:
+        sam_command: "deploy"
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
