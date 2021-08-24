@@ -1,6 +1,8 @@
 import unittest
 import boto3
 import botocore
+import json
+import typing
 
 running_locally = False
 
@@ -24,6 +26,21 @@ else:
 
 # Invoke your Lambda function as you normally usually do. The function will run
 # locally if it is configured to do so
+
+def invokeLambdaFunction(*, functionName:str=None, payload:typing.Mapping[str, str]=None):
+    if  functionName == None:
+        raise Exception('ERROR: functionName parameter cannot be NULL')
+    payloadStr = json.dumps(payload)
+    payloadBytesArr = bytes(payloadStr, encoding='utf8')
+    client = boto3.client('lambda')
+    response = client.invoke(
+        FunctionName=functionName,
+        InvocationType="RequestResponse",
+        Payload=payloadBytesArr
+    )
+    return response
+
+assert invokeLambdaFunction(functionName="StartWithSamFunction02", payload={"ping":0123})
 response = lambda_client.invoke(FunctionName="StartWithSamFunction02")
 
 # Verify the response
