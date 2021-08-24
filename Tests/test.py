@@ -2,7 +2,7 @@ import unittest
 import boto3
 import botocore
 
-running_locally = True
+running_locally = False
 
 if running_locally:
 
