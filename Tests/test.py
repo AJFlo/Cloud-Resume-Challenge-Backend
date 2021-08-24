@@ -43,5 +43,7 @@ LambdaName = "sam-app-StartWithSamFunction02-HLW6Sk6U2FAH"
 
 response = invokeLambdaFunction(functionName=LambdaName, payload={})
 
+print(response)
+
 assert (response == int(response))
 
