@@ -46,9 +46,10 @@ if(myResponse.ok):
     print(jData[Key])
     #print(jData[0][Key])
     V=jData[Key]
-if(IsInteger(V) and IsPositive(V)):
+    IsInteger(V)
+#if(IsInteger(V) and IsPositive(V)):
     
-    print (myResponse.status_code)
+    #print (myResponse.status_code)
     
        
     #return True
