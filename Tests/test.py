@@ -42,9 +42,9 @@ if(myResponse.ok):
     # json.loads takes in only binary or string variables so using content to fetch binary content
     # Loads (Load String) takes a Json file and converts into python data structure (dict or list, depending on JSON)
     jData = json.loads(myResponse.content)
-    print(jData)
-    print(jData[0])
-    print(jData[0][Key])
+    #print(jData)
+    #print(jData[0])
+    #print(jData[0][Key])
     V=jData[0][Key]
 if(IsInteger(V) and IsPositive(V)):
     
