@@ -45,7 +45,7 @@ if(myResponse.ok):
     jData = json.loads(myResponse.content),
     print(jData), 
     print(jData[0]),
-    print(jData[0][0]),
+    print(jData[0][Key]),
   # If response code is not ok (200), print the resulting http error code with description
     
 
