@@ -61,4 +61,4 @@ jobs:
       - name: SAM Deploy
         run: |
           sam deploy --confirm-changeset \
-          --parameter-overrides confirm_changeset=True
+          confirm_changeset = True
