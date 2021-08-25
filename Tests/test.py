@@ -37,13 +37,13 @@ myResponse = requests.get(ApiUrl, verify=True)
 def IsPositive(num):
     assert num>0
     
-def func(x):
+"""def func(x):
     return x + 1
 
 
 def test_answer():
     assert func(4) == 5
-test_answer()
+test_answer()"""
 # For successful API call, response code will be 200 (OK)
 if(myResponse.ok):
     # Loading the response data into a dict variable
