@@ -40,8 +40,9 @@ if(myResponse.ok):
     # Loads (Load String) takes a Json file and converts into python data structure (dict or list, depending on JSON)
     jData = json.loads(myResponse.content)
     print(jData)
-    assert jData[Key]==int(jData[Key])
-    assert jData[Key]>0
+    Count = jData.values()[jData.keys().index(Key)
+    assert Count==int(Count)
+    assert Count>0
     print("The response contains {0} properties".format(len(jData)))
     print("\n")
 else:
