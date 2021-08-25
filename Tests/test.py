@@ -54,7 +54,8 @@ if(myResponse.ok):
     print(jData[Key])
     #print(jData[0][Key])
     V=jData[Key]
-    print(type(V))
+    print(isinstance(V,int))
+    
     def IsInteger():
         assert isinstance(V, int) == True
     IsInteger()
