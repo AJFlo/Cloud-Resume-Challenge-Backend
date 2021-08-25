@@ -39,7 +39,7 @@ if(myResponse.ok):
     # Loads (Load String) takes a Json file and converts into python data structure (dict or list, depending on JSON)
     jData = json.loads(myResponse.content)
     assert jData > 0
-    assert jData=int(jData)
+    assert jData==int(jData)
 
     print("The response contains {0} properties".format(len(jData)))
     print("\n")
