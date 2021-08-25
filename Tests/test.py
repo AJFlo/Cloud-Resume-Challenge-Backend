@@ -43,7 +43,7 @@ def func(x):
 
 
 def test_answer():
-    assert func(3) == 5
+    assert func(4) == 5
 test_answer()
 # For successful API call, response code will be 200 (OK)
 if(myResponse.ok):
