@@ -60,4 +60,5 @@ jobs:
           python3 -m pytest -s -vvv ./Tests/test.py
       - name: SAM Deploy
         run: |
-          sam deploy --confirm-changeset=True
+          sam deploy --confirm-changeset \
+          --parameter-overrides confirm_changeset=True
