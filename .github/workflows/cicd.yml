@@ -60,4 +60,5 @@ jobs:
           python3 -m pytest -s -vvv ./Tests/test.py
       - name: SAM Deploy
         run: |
-          sam deploy confirm_changeset=True
+          sam deploy sam deploy --no-confirm-changeset --no-fail-on-empty-changeset
+
