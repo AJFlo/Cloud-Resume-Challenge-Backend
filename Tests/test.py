@@ -44,7 +44,7 @@ if(myResponse.ok):
     print("The response contains {0} properties".format(len(jData)))
     print("\n")
     for key in jData:
-        print key + " : " + jData[key]
+        print(key + " : " + jData[key])
 else:
   # If response code is not ok (200), print the resulting http error code with description
     myResponse.raise_for_status()
