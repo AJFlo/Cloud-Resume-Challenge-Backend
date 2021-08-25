@@ -56,7 +56,7 @@ if(myResponse.ok):
     V=jData[Key]
     print(type(V))
     def IsInteger():
-        assert isinstance(V, int)
+        assert isinstance(V, int) == True
     IsInteger()
    
 #if(IsInteger(V) and IsPositive(V)):
