@@ -38,7 +38,6 @@ def IsPositive(num):
     assert num>0
 # For successful API call, response code will be 200 (OK)
 if(myResponse.ok):
-
     # Loading the response data into a dict variable
     # json.loads takes in only binary or string variables so using content to fetch binary content
     # Loads (Load String) takes a Json file and converts into python data structure (dict or list, depending on JSON)
@@ -46,6 +45,9 @@ if(myResponse.ok):
     print(jData),
     print(jData[0])
     print(jData[0][Key])
+    V=jData[0][Key]
+if(IsInteger(V) and IsPositive(V)):
+    return True
     
   # If response code is not ok (200), print the resulting http error code with description
     
