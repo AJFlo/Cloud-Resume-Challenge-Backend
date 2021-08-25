@@ -31,7 +31,5 @@ LambdaName= "sam-app-StartWithSamFunction02-HLW6Sk6U2FAH"
 
 response = lambda_client.invoke(FunctionName=LambdaName)
 
-# Verify the response
-
-assert (response == int(response))
+return response
 
