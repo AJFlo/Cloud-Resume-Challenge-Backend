@@ -58,9 +58,14 @@ if(myResponse.ok):
     
 def IsInteger(x):
     return isinstance(x, int)
-def test_answer():
+def IsPositive(y):
+    return y>0
+def test_answer_one():
     assert IsInteger(V)== True
-test_answer()
+def test_answer_two():
+    assert IsPositive(V)
+test_answer_one()
+test_answer_two()
    
 #if(IsInteger(V) and IsPositive(V)):
     
