@@ -60,5 +60,4 @@ jobs:
           python3 -m pytest -s -vvv ./Tests/test.py
       - name: SAM Deploy
         run: |
-          sam deploy
-          --confirm-changeset
+          sam deploy --confirm-changeset
