@@ -44,7 +44,8 @@ if(myResponse.ok):
     # Loads (Load String) takes a Json file and converts into python data structure (dict or list, depending on JSON)
     jData = json.loads(myResponse.content),
     print(jData), 
-    print(jData[0])
+    jData[0]=KVS,
+    print(KVS.get(Key))
   # If response code is not ok (200), print the resulting http error code with description
     
 
