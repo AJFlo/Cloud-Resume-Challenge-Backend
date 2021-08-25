@@ -47,7 +47,11 @@ if(myResponse.ok):
     print(jData[0][Key])
     V=jData[0][Key]
 if(IsInteger(V) and IsPositive(V)):
-    return True
+    
+    print (myResponse.status_code)
+    
+       
+    #return True
     
   # If response code is not ok (200), print the resulting http error code with description
     
