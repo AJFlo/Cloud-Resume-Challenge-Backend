@@ -32,8 +32,7 @@ Key = "Visitor_Count"
     # It is a good practice not to hardcode the credentials. So ask the user to enter credentials at runtime
 myResponse = requests.get(ApiUrl, verify=True)
 #print (myResponse.status_code)
-def IsInteger(num):
-    assert num==int(num)
+
 
 def IsPositive(num):
     assert num>0
@@ -56,7 +55,10 @@ if(myResponse.ok):
     #print(jData[0][Key])
     V=jData[Key]
     print(type(V))
-    assert int(V)>0
+    def IsInteger():
+        assert type(V)=='int'
+    IsInteger()
+   
 #if(IsInteger(V) and IsPositive(V)):
     
     #print (myResponse.status_code)
