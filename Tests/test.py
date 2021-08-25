@@ -43,9 +43,9 @@ if(myResponse.ok):
     # Loads (Load String) takes a Json file and converts into python data structure (dict or list, depending on JSON)
     jData = json.loads(myResponse.content)
     #print(jData)
-    #print(jData[0])
+    print(jData[Key])
     #print(jData[0][Key])
-    V=jData[0][Key]
+    V=jData[Key]
 if(IsInteger(V) and IsPositive(V)):
     
     print (myResponse.status_code)
