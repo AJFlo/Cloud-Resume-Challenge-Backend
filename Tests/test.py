@@ -27,6 +27,7 @@ else:
     
     
 ApiUrl= "https://h2r98egvbi.execute-api.us-east-2.amazonaws.com/Prod/Visitor_Count/"
+Key = "Visitor_Count"
     # It is a good practice not to hardcode the credentials. So ask the user to enter credentials at runtime
 myResponse = requests.get(ApiUrl, verify=True)
 #print (myResponse.status_code)
