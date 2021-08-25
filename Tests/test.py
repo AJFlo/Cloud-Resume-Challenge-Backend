@@ -46,7 +46,7 @@ if(myResponse.ok):
     print(jData[Key])
     #print(jData[0][Key])
     V=jData[Key]
-    IsInteger(V)
+    assert int(V)>0
 #if(IsInteger(V) and IsPositive(V)):
     
     #print (myResponse.status_code)
