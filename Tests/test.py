@@ -38,9 +38,7 @@ if(myResponse.ok):
     # json.loads takes in only binary or string variables so using content to fetch binary content
     # Loads (Load String) takes a Json file and converts into python data structure (dict or list, depending on JSON)
     jData = json.loads(myResponse.content)
-    assert jData > 0
-    assert jData==int(jData)
-
+    print(jData)
     print("The response contains {0} properties".format(len(jData)))
     print("\n")
     for key in jData:
