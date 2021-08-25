@@ -31,7 +31,11 @@ Key = "Visitor_Count"
     # It is a good practice not to hardcode the credentials. So ask the user to enter credentials at runtime
 myResponse = requests.get(ApiUrl, verify=True)
 #print (myResponse.status_code)
+def IsInteger(num):
+    assert num==int(num)
 
+def IsPositive(num):
+    assert num>0
 # For successful API call, response code will be 200 (OK)
 if(myResponse.ok):
 
@@ -41,8 +45,8 @@ if(myResponse.ok):
     jData = json.loads(myResponse.content)
     print(jData)
     Count = jData.values()[jData.keys().index(Key)
-    assert Count==int(Count)
-    assert Count>0
+    IsInteger(Count)
+    IsPositive(Count)                      
     print("The response contains {0} properties".format(len(jData)))
     print("\n")
 else:
