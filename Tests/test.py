@@ -45,8 +45,9 @@ if(myResponse.ok):
     jData = json.loads(myResponse.content),
     print(jData),
     Count = jData.values()[jData.keys().index(Key),
-    IsInteger(Count),
-    IsPositive(Count),                      
+    print(Count),
+
+                       
     print("The response contains {0} properties".format(len(jData))),
     print("\n")
  
